@@ -59,12 +59,18 @@ class AuthController extends Controller
     {
         return $this->respondWithToken(auth()->refresh());
     }
+    
     public function logout()
     {
         auth()->logout();
 
         return response()->json(['message' => 'User Berhasil Logout']);
     }
+    public function profile()
+    {
+        return response()->json(auth()->user());
+    }
+
     protected function respondWithToken($token)
     {
         return response()->json([
