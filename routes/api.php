@@ -12,7 +12,8 @@ Route::group(['middleware' => 'api'], function($router) {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::post('/profile   ', [AuthController::class, 'profile']);
-    Route::get('/get-produk',[ProdukController::class,'GetProduk']);
+    Route::post('/produk',[ProdukController::class,'GetProduk']); //get data dan insert produk
+    // Route::post('/update-produk',[ProdukController::class,'UpdateProduk']);
 
 });
 
